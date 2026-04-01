@@ -1,45 +1,50 @@
-# Weather CLI App
+# Voice-Based Weather Assistant
 
-A simple command-line weather application built using Python.
-It fetches real-time weather data using an API and displays it in a clean format.
+A Python-based voice-enabled weather assistant that accepts natural language input, extracts the city intelligently, fetches real-time weather data, and responds using text-to-speech.
 
 ---
 
 ## Features
 
-* Get real-time weather by city name
-* CLI-based input using argparse
-* Secure API key management using dotenv
-* Error handling for invalid cities
-* Clean and readable output
+* Voice input through microphone
+* Intelligent city extraction from flexible sentences
+* Real-time weather data using OpenWeather API
+* Voice response using text-to-speech
+* Supports natural queries such as:
+
+  * "weather in delhi"
+  * "aaj delhi ka mausam kaisa hai"
+  * "delhi weather update"
 
 ---
 
 ## Tech Stack
 
 * Python
-* argparse
-* requests
+* SpeechRecognition
+* SoundDevice
+* Pyttsx3
+* Requests
 * python-dotenv
 
 ---
 
 ## Installation
 
-1. Clone the repository:
-   git clone https://github.com/ridhimagarg23/weather-cli-app.git
+Clone the repository:
+git clone https://github.com/ridhimagarg23/weather-cli-app.git
 
-2. Navigate to the project folder:
-   cd weather-cli-app
+Navigate to the project folder:
+cd weather-cli-app
 
-3. Create virtual environment:
-   python -m venv venv
+Create virtual environment:
+python -m venv venv
 
-4. Activate environment:
-   venv\Scripts\activate
+Activate environment:
+venv\Scripts\activate
 
-5. Install dependencies:
-   pip install requests python-dotenv
+Install dependencies:
+pip install sounddevice scipy SpeechRecognition pyttsx3 requests python-dotenv
 
 ---
 
@@ -53,33 +58,36 @@ API_KEY=your_api_key_here
 
 ## Usage
 
-Run the app using:
+Run the assistant:
 
-python app.py --city Delhi
+python voice_weather.py
 
 ---
 
-## Example Output
+## Example
 
-Weather in Delhi:
-Temperature: 23°C
-Humidity: 73%
-Description: Haze
+Input:
+Aaj Delhi ka mausam kaisa hai
+
+Output:
+Delhi ka temperature 32°C hai aur weather clear hai
 
 ---
 
 ## Error Handling
 
-* Displays error if city is not found
+* Handles invalid or missing API key
+* Handles incorrect city detection
 * Prevents crashes using safe checks
 
 ---
 
 ## Future Improvements
 
-* Add wind speed and feels-like temperature
-* Support multiple cities
-* Add GUI version
+* Wake word detection ("Hey Assistant")
+* Continuous listening mode
+* Multi-city handling
+* Advanced NLP-based entity extraction
 
 ---
 
